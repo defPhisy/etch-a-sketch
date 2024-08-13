@@ -3,17 +3,42 @@ const container = document.querySelector(".container");
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", resetCanvasGrid);
 
-function createCanvasGrid() {
-  const squaresPerSide = 25; //16 creates a 16x16 grid 
-  const canvasWidth = container.clientWidth;
-  const squareLength = canvasWidth / squaresPerSide;
+function getGridLength() {
+  const userInput = getUserInput();
+  const checkedInput = checkUserInput(userInput);
+  return checkedInput;
+}
 
-  for (let i = 0; i < squaresPerSide; i++) {
+function getUserInput() {
+  return parseInt(
+    prompt(
+      "What canvas length you want to choose? \n You can pick between 1 and 100!"
+    )
+  );
+}
+
+function checkUserInput(input) {
+  while (input > 100 || input <= 0) {
+    input = parseInt(
+      prompt(
+        `${input} is out of range. Please select a number between 1 and 100!`
+      )
+    );
+  }
+  return input;
+}
+
+function createCanvasGrid() {
+  const squaresLength = getGridLength();
+  const canvasWidth = container.clientWidth;
+  const squareLength = canvasWidth / squaresLength;
+
+  for (let i = 0; i < squaresLength; i++) {
     const column = document.createElement("div");
     column.classList = `column${i + 1}`;
     container.appendChild(column);
 
-    for (let i = 0; i < squaresPerSide; i++) {
+    for (let i = 0; i < squaresLength; i++) {
       const row = document.createElement("div");
       row.style.width = `${squareLength}px`;
       row.style.height = `${squareLength}px`;
