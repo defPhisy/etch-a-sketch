@@ -1,10 +1,13 @@
 const container = document.querySelector(".container");
 
-const canvasWidth = container.clientWidth;
-const squaresPerSide = 16;
-const squareWidth = canvasWidth / squaresPerSide;
+const resetBtn = document.querySelector(".reset");
+resetBtn.addEventListener("click", resetCanvasGrid);
 
 function createCanvasGrid() {
+  const squaresPerSide = 25; //16 creates a 16x16 grid 
+  const canvasWidth = container.clientWidth;
+  const squareLength = canvasWidth / squaresPerSide;
+
   for (let i = 0; i < squaresPerSide; i++) {
     const column = document.createElement("div");
     column.classList = `column${i + 1}`;
@@ -12,8 +15,8 @@ function createCanvasGrid() {
 
     for (let i = 0; i < squaresPerSide; i++) {
       const row = document.createElement("div");
-      row.style.width = `${squareWidth}px`;
-      row.style.height = `${squareWidth}px`;
+      row.style.width = `${squareLength}px`;
+      row.style.height = `${squareLength}px`;
       row.classList = `row${i + 1}`;
       row.style.backgroundColor = "red";
       row.addEventListener("mouseover", (e) => {
@@ -27,8 +30,7 @@ function createCanvasGrid() {
 function deleteCanvasGrid() {
   const columns = container.querySelectorAll("div");
   for (let i = 0; i < columns.length; i++) {
-    const column = columns[i];
-    column.remove();
+    columns[i].remove();
   }
 }
 
@@ -36,8 +38,5 @@ function resetCanvasGrid() {
   deleteCanvasGrid();
   createCanvasGrid();
 }
-
-const resetBtn = document.querySelector(".reset");
-resetBtn.addEventListener("click", resetCanvasGrid);
 
 createCanvasGrid();
