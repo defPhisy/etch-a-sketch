@@ -1,0 +1,48 @@
+/* Custom CSS Reset
+based on Josh Comeau's CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/
+and Andy Bell's Modern CSS Reset: https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* -webkit... only for Safari and MacOS with retina display */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video,
+canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* makes sure to use same font-family, font-size and font-weight for all elements */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/*------ Main Styling ------*/
+
+body {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.container {
+  width: 960px;
+  background-color:antiquewhite;
+  display: flex;
+}
+
+.row {
+  background-color: blue;
+}
