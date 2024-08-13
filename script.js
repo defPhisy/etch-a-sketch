@@ -18,7 +18,7 @@ function getUserInput() {
 }
 
 function checkUserInput(input) {
-  while (input > 100 || input <= 0) {
+  while (input > 100 || input <= 0 || !input) {
     input = parseInt(
       prompt(
         `${input} is out of range. Please select a number between 1 and 100!`
