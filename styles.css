@@ -2,7 +2,9 @@
 based on Josh Comeau's CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/
 and Andy Bell's Modern CSS Reset: https://piccalil.li/blog/a-more-modern-css-reset/ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,15 +19,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video,
-canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* makes sure to use same font-family, font-size and font-weight for all elements */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -35,14 +42,44 @@ body {
   display: grid;
   place-content: center;
   text-align: center;
+  background-color: rgb(25, 25, 35);
+  color: rgb(230, 230, 250);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
   width: 960px;
-  background-color:antiquewhite;
   display: flex;
+  background-color: black;
+  padding: 1rem;
 }
 
-.row {
-  background-color: blue;
+.title {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+}
+
+.reset-btn {
+  background-color: rgb(75, 109, 248);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  margin-block: 1rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.mods {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: black;
+  padding-inline: 3rem;
+  padding-block: 0.5rem;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
 }

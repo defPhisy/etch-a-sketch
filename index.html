@@ -14,7 +14,25 @@
 <body>
 
     <h1 class="title">Etch A Sketch</h1>
-    <button class="reset">Reset Canvas</button>
+    <button class="reset-btn">Reset Canvas</button>
+
+    <div class="mods">
+        <div class="container-color">
+            <label for="color-picker">choose color</label>
+            <select name="color-picker" id="color-picker">
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="random-color">random color</option>
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+            </select>
+        </div>
+
+
+        <div class="container-checkbox"><input type="checkbox" name="shades-of" id="shades-of">shades of ...</input>
+        </div>
+    </div>
 
     <div class="container"></div>
 
